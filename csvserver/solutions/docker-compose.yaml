@@ -1,0 +1,26 @@
+version: '3'
+services:
+  csvserver:
+    image: csvserver-new:v1.0.2
+    env_file:
+      - csvserver.env
+    ports:
+      - "9393:9393"
+    volumes:
+      - ./inputFile:/csvserver/inputdata
+    networks:
+      - default_network
+  prometheus:
+    image: prom/prometheus:v2.22.0
+    volumes:
+      - ./prometheus.yaml:/etc/prometheus/prometheus.yaml:ro
+    ports:
+      - "9090:9090"
+    depends_on:
+      - csvserver
+    networks:
+      - default_network
+
+networks:
+  default_network:
+    driver: bridge
