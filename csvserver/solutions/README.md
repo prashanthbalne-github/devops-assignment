@@ -1,7 +1,6 @@
 As part of the Assignment, I have did the following steps to complete Part-1,2,3.
-
 Prerquesites
-===============
+============
 * Launched a t2-micro Ubuntu Linux machine on AWS
 * Eanabled SSH access to the same machine by generating a new key-pair .pem file
 * Insalled docker and docker-compose on that machine using packege manager "apt-get" with the folllwoing commands
@@ -12,7 +11,6 @@ Prerquesites
         docker --version
         docker-compose --version
         git --version                           #TO check the running versions on the softwares
-
 Part-1
 ===============
 Cloned the git repo onto the Machine using command
